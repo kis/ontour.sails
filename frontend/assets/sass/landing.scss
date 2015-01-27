@@ -1,0 +1,149 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+$font: bold 36px Roboto Condensed;
+$font-small: bold 24px Roboto Condensed;
+$color: rgba(126,7,21,0.8);
+$color-hover: rgba(126,7,21,1);
+
+#landing-pic {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../img/registration.jpg);
+	background-position: bottom left;
+	opacity: 0.8;
+	overflow: hidden;
+	zoom: 0.6;
+}
+
+#landing-head {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	z-index: 25;
+	a {
+		margin-right: 10px;
+		text-decoration: none;
+		color: $color;
+		font: $font-small;
+		&:hover {
+			border-bottom: 3px solid $color;
+		}
+	}
+}
+
+#landing-actions {
+	position: absolute;
+	left: 50%;
+	margin-left: -22%;
+	color: $color;
+	font: $font;
+	@media screen and (min-width: 980px) {
+		top: 33%;
+	}
+	@media screen and (max-width: 980px) {
+		top: 10%;
+	}
+	.landing-words {
+		margin-bottom: 30px;
+		@media screen and (min-width: 980px) {
+			margin-left: 2%;
+		}
+		@media screen and (max-width: 980px) {
+			margin-left: -10%;
+			font: $font-small;
+		}
+	}
+	a {
+		color: $color;
+		border: 5px solid $color;
+		margin: 10px;
+		padding: 7px 25px 7px 25px;
+		cursor: pointer;
+		text-decoration: none;
+		display: inline-block;
+		&:hover {
+			border: 5px solid $color-hover;
+			color: $color-hover;
+		}
+	}
+}
+
+#landing-form {
+	position: absolute;
+	left: 50%;
+	@media screen and (min-width: 980px) {
+		top: 22%;
+		margin-left: -16%;
+	}
+	@media screen and (max-width: 980px) {
+		top: 18%;
+		margin-left: -30%;
+	}
+	.landing-data {
+		padding: 7px 25px 7px 25px;
+		display: block;
+		border: 5px solid $color;
+		color: $color;
+		background: transparent;
+		outline: none;
+		font: $font;
+		margin-bottom: 10px;
+		&:hover {
+			border: 5px solid $color-hover;
+			color: $color-hover;
+		}
+		@media screen and (min-width: 720px) {
+			top: 30%;
+			width: 300px;
+		}
+		@media screen and (max-width: 720px) {
+			top: 20%;
+			width: 250px;
+		}
+	}
+	.invalid {
+		background: rgba(123,28,39,0.5)
+	}
+	.valid {
+		background: rgba(62,114,41,0.5)
+	}
+}
+
+#words {
+	position: absolute;
+	left: 30%;
+	font: $font;
+	color: $color;
+	@media screen and (min-width: 980px) {
+		top: 22%;
+		margin-left: -16%;
+	}
+	@media screen and (max-width: 980px) {
+		top: 18%;
+		margin-left: -25%;
+	}
+}
+
+#social {
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+	z-index: 25;
+	a {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		margin: 2px;
+		background: $color;
+		i {
+			padding: 10px;
+			color: white;
+		}
+		&:hover {
+			background: $color-hover;
+		}
+	}
+}

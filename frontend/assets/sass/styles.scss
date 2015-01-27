@@ -1,0 +1,279 @@
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+$bg: rgba(16,49,90,1);
+$bg-alpha: rgba(16,49,90,0.4);
+$bg-grey: rgba(223,223,223,0.5);
+
+$font: 14px Roboto Condensed;
+$fontHeader: 18px Roboto Condensed;
+
+$padding: 12px 14px 12px 14px;
+$paddingLess: 6px 8px 6px 8px;
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+
+body {
+	overflow: hidden;
+}
+
+.fade-animation {
+	-webkit-transition: 0.2s linear all;
+	transition: 0.2s linear all;
+}
+
+.ng-enter {
+	@extend .fade-animation;
+	opacity: 0;
+}
+
+.ng-enter-active {
+	@extend .fade-animation;
+	@extend .ng-enter;
+	opacity: 1;
+}
+
+.ng-leave {
+	@extend .fade-animation;
+	opacity: 1;
+}
+
+.ng-leave-active {
+	@extend .fade-animation;
+	@extend .ng-leave;
+	opacity: 0;
+}
+
+.slide-menu {
+	@extend .fade-animation;
+	left: 345px;
+}
+
+/**
+ * Search
+ */
+
+@mixin style() {
+	font: $font;
+	display: inline-block;
+	background: $bg-alpha;
+	color: white;
+	cursor: pointer;
+	text-align: center;
+	&:hover {
+		background: $bg !important;
+	}
+}
+
+#search {
+	position: absolute;
+	top: 15px;
+	margin-left: 15px;
+	width: 335px;
+	font-size: 0;
+	padding: 0px;
+	z-index: 15;
+	clear: both;
+
+	.tab {
+		padding: $padding;
+		width: 137px;
+
+		@include style();
+	}
+
+	.active {
+		background: $bg !important;
+	}
+
+	.search-field {
+		width: 307px;
+		font: $font;
+		display: block;
+		padding: 11px 11px 11px 12px;
+		outline: none;
+		border: 0px;
+	}
+
+	.invalid {
+		background: $bg-alpha;
+	}
+
+	.autocomplete {
+		position: absolute;
+		z-index: 10;
+		font: $font;
+		width: 330px;
+		cursor: pointer;
+		background: white;
+		div {
+			padding: $paddingLess;
+			border-bottom: 1px solid $bg-alpha;
+			&:hover {
+				background: $bg-grey;
+			}
+		}
+	}
+
+	.tags {
+		position: relative;
+		width: 335px;
+		font: $font;
+		padding: 0px;
+		z-index: 5;
+	}
+
+	.tag {
+		padding: $paddingLess;
+		width: 94px;
+		border-bottom: 1px solid $bg-alpha;
+
+		@include style();
+	}
+
+	.search-button {
+		padding: $padding;
+		width: 135px;
+
+		@include style();
+	}
+
+	.festivals {
+		width: 15px;
+		padding: 12px 5px 12px 5px;
+		margin-left: 3px;
+
+		@include style();
+	}
+}
+
+/**
+ * Events
+ */
+
+#events {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	bottom: 15px;
+	width: 330px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	font: $font;
+	color: white;
+	z-index: 6;
+
+	.more {
+		position: relative;
+		height: 25px;
+		padding: 18px 14px 12px 14px;
+		background-color: $bg-alpha;
+		text-align: center;
+		&:hover {
+			background: $bg;
+			cursor: pointer;
+		}
+	}
+}
+
+.event-item {
+	position: relative;
+	height: 100px;
+	border-bottom: 1px solid $bg-alpha;
+	background-color: $bg-alpha;
+	&:hover {
+		background: $bg;
+		cursor: pointer;
+	}
+
+	.artist-pic {
+		width: 100px;
+		height: 100px;
+		float: left;
+	}
+
+	.artist-data {
+		display: inline-block;
+		padding: 3px 0px 0px 10px;
+		font: $font;
+		width: 180px;
+	}
+
+	.selected {
+		background: $bg !important;
+	}
+}
+
+/**
+ * Map
+ */
+
+#map {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	z-index: 2;
+}
+
+.dot {
+	border-radius: 50%;
+}
+
+.leaflet-container {
+	color: white !important;
+}
+
+.leaflet-popup-content-wrapper {
+	border-radius: 0 !important;
+	background: $bg !important;
+}
+
+.leaflet-popup-content {
+	padding: 0px !important;
+	width: 285px !important;
+	height: 100px;
+}
+
+.leaflet-popup-tip {
+	border-top: 10px solid $bg !important;
+}
+
+::selection {
+	background: #ffb7b7;
+}
+
+#about {
+	position: absolute;
+	right: 45%;
+	bottom: 15px;
+	z-index: 25;
+	font: $font;
+	color: $bg-alpha;
+}
+
+#page-controls {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	z-index: 25;
+	a {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		margin: 2px;
+		background: $bg-alpha;
+		i {
+			padding: 10px;
+			color: white;
+		}
+		&:hover {
+			background: $bg;
+		}
+	}
+}
