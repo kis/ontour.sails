@@ -20,6 +20,19 @@ module.exports = function(grunt) {
 		css: {
 			src: require('../pipeline').cssFilesToInject,
 			dest: '.tmp/public/concat/production.css'
+		},
+
+		frontend: {
+		    options: {
+		        process: function(src) {
+		            return '(function(){' + src + '})();';
+		        }
+		    },
+		    src: [
+		    	'frontend/*.js',
+		        'frontend/**/*.js'
+		    ],
+		    dest: '.tmp/public/js/main.js'
 		}
 	});
 

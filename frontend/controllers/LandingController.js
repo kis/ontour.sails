@@ -1,6 +1,5 @@
-var ontour = angular.module('ontour', []);
-
-ontour.controller('LandingController', ['$scope', '$http', function ($scope, $http) {
+angular.module('ontour').controller('LandingController', 
+function ($scope, $http) {
 	
 	$scope.user = {};
 
@@ -20,7 +19,7 @@ ontour.controller('LandingController', ['$scope', '$http', function ($scope, $ht
 		}
 	};
 
-}])
+})
 .directive('passwordRepeat', function() {
 	return {
 		require: 'ngModel',

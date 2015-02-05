@@ -1,0 +1,40 @@
+include head.jade
+
+section(id="landing-head")
+	a(href="/welcome") Главная
+	a(id="sign-in", href="/signin") Войти
+	a(id="sign-up", href="/signup") Регистрация
+	a(id="try", href="/") Карта
+
+form(id="landing-form", 
+	 name="regform", 
+	 ng-submit="submitRegistration()", 
+	 ng-controller="LandingController",
+	 novalidate,
+	 autocomplete="off")
+	input(class="landing-data", 
+		  type="email", 
+		  name="email", 
+		  placeholder="Email", 
+		  ng-model="user.email",
+		  ng-class="{invalid: regform.$submitted && regform.email.$invalid}",
+		  required)
+	input(class="landing-data", 
+		  type="password", 
+		  name="password", 
+		  placeholder="Пароль", 
+		  ng-model="user.password", 
+		  ng-class="{invalid: regform.$submitted && regform.password.$invalid}",
+		  required)
+	input(class="landing-data", 
+		  type="password", 
+		  name="password_repeat", 
+		  placeholder="Повторите пароль", 
+		  ng-model="user.password_repeat", 
+		  password-repeat="password",
+		  ng-class="{invalid: regform.$submitted && regform.password_repeat.$invalid}",
+		  required)
+	button(class="landing-data", 
+		   type="submit") Регистрация
+
+include footer.jade
