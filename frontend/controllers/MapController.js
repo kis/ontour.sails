@@ -21,4 +21,6 @@ angular.module('ontour').controller('MapController', function($scope) {
 		$scope.map.addLayer($scope.cluster);
 	};
 
+	$scope.ontourDate = (new Date()).getFullYear();
+
 });

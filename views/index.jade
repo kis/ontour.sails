@@ -75,12 +75,12 @@ html(data-ng-app="ontour")
                          div(class="artist-data") {{event.date}} <br/> {{event.artists.headliner}} <br/><br/> {{event.venue.name}} <br/> {{event.venue.location.city}} {{event.venue.location.country}} <br/>
                     div(class="more",
                         ng-click="nextPage()",
-                        ng-show="events",
+                        ng-show="events.length",
                         ng-cloak) {{pages.page}}/{{pages.totalPages}} Ещё <i ng-cloak ng-show="searchStatus" class="fa fa-spinner fa-spin"></i>
  
         section(id="map")
 
-        section(id="about") Ontour 2014 Идея и разработка Кирилла Стёпкина
+        section(id="about") Ontour {{ontourDate}}
 
         section(id="page-controls")
             a(href="/welcome")
