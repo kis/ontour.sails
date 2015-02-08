@@ -5,10 +5,17 @@
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
 
-module.exports = {
+var Waterline = require('waterline');
 
+var user = Waterline.Collection.extend({
   attributes: {
-
+  	email        : {
+  		type: 'String'
+  	},
+  	password     : {
+  		type: 'String'
+  	}
   }
-};
+});
 
+module.exports = user;

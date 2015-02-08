@@ -32,25 +32,43 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
+  'get /': {
     view: 'index'
   },
 
-  '/welcome': {
+  'get /welcome': {
     view: 'landing/welcome'
   },
 
-  '/signin': {
+  'get /signin': {
     view: 'landing/signin'
   },
 
-  '/signup': {
+  'get /signup': {
     view: 'landing/signup'
   },
 
-  '/success': {
+  'get /success': {
     view: 'landing/success'
-  }
+  },
+
+  /*app.post('/register', passport.authenticate('local-signup', {
+    successRedirect : '/success', // redirect to the secure profile section
+    failureRedirect : '/signup', // redirect back to the signup page if there is an error
+    failureFlash : true // allow flash messages
+  }));
+
+  app.post('/login', passport.authenticate('local-login', {
+    successRedirect : '/', // redirect to the secure profile section
+    failureRedirect : '/signin', // redirect back to the signup page if there is an error
+    failureFlash : true // allow flash messages
+  }));*/
+
+  'post /login': 'UserController.login',
+  'post /logout': 'UserController.logout',
+  'post /register': 'UserController.register'
+
+
 
   /***************************************************************************
   *                                                                          *

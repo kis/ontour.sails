@@ -13,8 +13,8 @@ function ($scope, $http) {
 
 	$scope.submitLogin = function() {
 		if (!$scope.loginform.$invalid) {
+			$scope.user.username = $scope.user.email;
 			console.log($scope.user);
-
 			$http.post('/login', $scope.user);
 		}
 	};
