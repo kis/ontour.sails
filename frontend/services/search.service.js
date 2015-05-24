@@ -1,4 +1,4 @@
-angular.module('ontour').factory('SearchService', function($http) {
+angular.module('ontour', []).factory('SearchService', function($http) {
 
 	function search(params) {
 		return 	$http({

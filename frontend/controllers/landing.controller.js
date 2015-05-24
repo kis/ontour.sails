@@ -1,4 +1,4 @@
-angular.module('ontour').controller('LandingController', 
+angular.module('ontour', []).controller('LandingController', 
 function ($scope, $http) {
 	
 	$scope.user = {};

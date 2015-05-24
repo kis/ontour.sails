@@ -8,14 +8,20 @@
 var Waterline = require('waterline');
 
 var user = Waterline.Collection.extend({
-  attributes: {
-  	email        : {
-  		type: 'String'
-  	},
-  	password     : {
-  		type: 'String'
+	tableName: 'users',
+	adapter: 'sails-mongo',	
+	migrate: 'safe',
+	autoCreatedAt: true,
+	autoUpdatedAt: true,
+	autoPK: true,
+	attributes: {
+	  	email        : {
+	  		type: 'String'
+	  	},
+	  	password     : {
+	  		type: 'String'
+	  	}
   	}
-  }
 });
 
 module.exports = user;

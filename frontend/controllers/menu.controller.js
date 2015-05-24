@@ -1,4 +1,4 @@
-angular.module('ontour').controller('MenuController', function($scope) {
+angular.module('ontour', []).controller('MenuController', function($scope) {
 
 	$scope.menu = {
 		activeTab: {

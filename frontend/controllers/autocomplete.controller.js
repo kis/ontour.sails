@@ -1,4 +1,4 @@
-angular.module('ontour').controller('AutocompleteController', 
+angular.module('ontour', []).controller('AutocompleteController', 
 function($scope, AutocompleteService) {
 
 	$scope.autocomplete = {

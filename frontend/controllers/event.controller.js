@@ -1,4 +1,4 @@
-angular.module('ontour').controller('EventController', 
+angular.module('ontour', []).controller('EventController', 
 function($scope, $filter) {
 
 	$scope.$watchCollection('lastEvents', function() {

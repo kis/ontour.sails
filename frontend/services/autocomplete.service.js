@@ -1,4 +1,4 @@
-angular.module('ontour').factory('AutocompleteService', function($http) {
+angular.module('ontour', []).factory('AutocompleteService', function($http) {
 
 	function getArtistsData(artist) {
 		return $http({
