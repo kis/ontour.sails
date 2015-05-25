@@ -1,4 +1,5 @@
 angular.module('ontour', []).controller('MapController', function($scope) {
+	console.log('111');
 
 	/*kirillstyopkin.h29f88g0
 	zr0njcqy

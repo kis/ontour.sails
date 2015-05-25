@@ -1,21 +1,27 @@
-<doctype html>
+<!DOCTYPE html>
 <html ng-app="ontour">
     <head>
         <title>Ontour.im | Музыкальный тур</title>
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-        <meta charset="utf-8">
-        <meta name="description" content="Запланируй свой музыкальный тур">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta charset="utf-8" />
+        <meta name="description" content="Запланируй свой музыкальный тур" />
         
-        <link rel="icon" type="image/png" href="img/ontour-ico.png">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/all.min.css">
-        <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.0.1/mapbox.css">
-        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+        <link rel="icon" type="image/png" href="img/ontour-ico.png" />
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/all.min.css" />
+        <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.0.1/mapbox.css" />
+        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+    
+        <script src="bower_components/angular/angular.min.js"></script>
+        <!-- // <script src="bower_components/ui-router/release/angular-ui-router.min.js"></script> -->
+        <script src="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js"></script>
+        <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js"></script>
+        <script src="js/main.js"></script>
     </head>
 
     <body ng-controller="MapController">
         <section ng-controller="MenuController">
-
+        
             <section ng-controller="SearchController">
                 <menu id="search"
                       ng-class="{'slide-menu' : pages.page}"
@@ -29,7 +35,7 @@
                              class="tab">
                         </nav>
                     </section>
-
+        
                     <section ng-controller="AutocompleteController">
                         <form name="menuForm">
                             <input ng-class="{'invalid' : menuForm.searchValue.$invalid}"
@@ -50,7 +56,7 @@
                                  <a>{{item.name}} {{item.meta}}</a>
                             </div>
                         </section>
-
+        
                     <section class="tags"
                              ng-if="menu.activeTab.title === 'location'"
                              class="fade-animation">
@@ -64,15 +70,15 @@
                     </section>
                     
                     <a class="search-button" ng-click="search(menu.searchValue)">Поиск</a>
-
+        
                     <a ng-click="setFestivalsOnly()"
                        ng-class="{'active' : menu.festivalsOnly === 1}"
                        title="Только фестивали"
                        class="festivals"> Ф </a>
-
+        
                 </menu>
             </section>
-
+        
             <section id="events" ng-controller="EventController">
                 <div class="event-item"
                      ng-repeat="event in events"
@@ -97,21 +103,16 @@
                 </div>
             </section>
         </section>
- 
+         
         <section id="map"></section>
-
+        
         <section id="about"> Ontour {{ontourDate}} </section>
-
+        
         <section id="page-controls">
             <a href="/welcome">
                 <i class="fa fa-home fa-2x"></i>
             </a>
         </section>
 
-        <script src="bower_components/angular/angular.min.js"></script>
-        <script src="bower_components/ui-router/release/angular-ui-router.min.js"></script>
-        <script src="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js"></script>
-        <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js"></script>
-        <script src="js/main.js"></script>
     </body>
 </html>

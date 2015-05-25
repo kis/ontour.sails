@@ -1,11 +1,19 @@
 angular.module('ontour', []).
-config(function($compileProvider, $logProvider) {
+config(function($compileProvider, $httpProvider, $logProvider, $controllerProvider) {
 
-	$logProvider.debugEnabled(true);
+	// $logProvider.debugEnabled(true);
+
+	$controllerProvider.allowGlobals();
 
 	$compileProvider.debugInfoEnabled(false);
 
+	// $httpProvider.useApplyAsync(true);
+
+	console.log('111');
+
 }).
-run(function() {
- 
+run(function() { 
+
+	console.log('111');
+
 });
