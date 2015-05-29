@@ -1,5 +1,5 @@
 angular.module('ontour', []).
-config(function($compileProvider, $httpProvider, $logProvider, $controllerProvider) {
+config(function($rootScope, $compileProvider, $httpProvider, $logProvider, $controllerProvider) {
 
 	// $logProvider.debugEnabled(true);
 
@@ -8,12 +8,18 @@ config(function($compileProvider, $httpProvider, $logProvider, $controllerProvid
 	$compileProvider.debugInfoEnabled(false);
 
 	// $httpProvider.useApplyAsync(true);
-
-	console.log('111');
+	
+	/*
+	$rootScope.$on('$stateChangeError', function(e, toState, toParams, fromState, fromParams) {
+		if (e typeof AuthorizationError) {
+			$state.go('login');
+		}	
+	});
+	*/
 
 }).
 run(function() { 
 
-	console.log('111');
+
 
 });
