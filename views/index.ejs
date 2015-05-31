@@ -14,9 +14,11 @@
     </head>
 
     <body ng-controller="MapController">
+        
         <section ng-controller="MenuController">
         
             <section ng-controller="SearchController">
+                
                 <menu id="search"
                       ng-class="{'slide-menu' : pages.page}"
                       class="fade-animation">
@@ -71,31 +73,33 @@
                        class="festivals"> Ф </a>
         
                 </menu>
+
+                <section id="events" ng-controller="EventController">
+                    <div class="event-item"
+                         ng-repeat="event in events"
+                         ng-class="{'selected' : event.selected || event.focused}"
+                         ng-click="selectEvent(event)"
+                         ng-mouseenter="showPopup(event, 1)"
+                         ng-mouseleave="hidePopup(event)"
+                         ng-cloak>
+                         <img ng-src="{{event.image[3]['#text']}}" class="artist-pic" />
+                         <div class="artist-data">
+                            {{event.date}} <br/> 
+                            {{event.artists.headliner}} <br/><br/> 
+                            {{event.venue.name}} <br/> 
+                            {{event.venue.location.city}} {{event.venue. location.country}} <br/>
+                         </div>
+                    </div>
+                    <div class="more"
+                         ng-click="nextPage()"
+                         ng-show="events.length"
+                         ng-cloak>
+                         {{pages.page}}/{{pages.totalPages}} Ещё <i ng-cloak ng-show=" searchStatus" class="fa fa-spinner fa-spin"></i>
+                    </div>
+                </section>
+            
             </section>
         
-            <section id="events" ng-controller="EventController">
-                <div class="event-item"
-                     ng-repeat="event in events"
-                     ng-class="{'selected' : event.selected || event.focused}"
-                     ng-click="selectEvent(event)"
-                     ng-mouseenter="showPopup(event, 1)"
-                     ng-mouseleave="hidePopup(event)"
-                     ng-cloak>
-                     <img ng-src="{{event.image[3]['#text']}}" class="artist-pic" />
-                     <div class="artist-data">
-                        {{event.date}} <br/> 
-                        {{event.artists.headliner}} <br/><br/> 
-                        {{event.venue.name}} <br/> 
-                        {{event.venue.location.city}} {{event.venue. location.country}} <br/>
-                     </div>
-                </div>
-                <div class="more"
-                     ng-click="nextPage()"
-                     ng-show="events.length"
-                     ng-cloak>
-                     {{pages.page}}/{{pages.totalPages}} Ещё <i ng-cloak ng-show=" searchStatus" class="fa fa-spinner fa-spin"></i>
-                </div>
-            </section>
         </section>
          
         <section id="map"></section>
