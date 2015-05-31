@@ -1,4 +1,4 @@
-angular.module('ontour', []).controller('SearchController', function($scope, SearchService) {
+angular.module('ontour').controller('SearchController', function($scope, SearchService) {
 
 	$scope.searchStatus = false;
 

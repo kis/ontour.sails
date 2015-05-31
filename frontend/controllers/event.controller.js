@@ -1,5 +1,7 @@
-angular.module('ontour', []).controller('EventController', 
+angular.module('ontour').controller('EventController', 
 function($scope, $filter) {
+
+	$scope.lastEvents = [];
 
 	$scope.$watchCollection('lastEvents', function() {
 		if ($scope.lastEvents.length) {

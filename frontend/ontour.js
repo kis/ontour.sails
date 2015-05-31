@@ -1,3 +1,4 @@
 angular.module('ontour', [
-	'ngAnimate'
+	'ngAnimate',
+	'ui.router'
 ]);
