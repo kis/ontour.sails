@@ -54,7 +54,7 @@
                         </section>
         
                     <section class="tags"
-                             ng-if="menu.activeTab.title === 'location'"
+                             ng-if="menu.activeTab.name === 'Город'"
                              class="fade-animation">
                         <div ng-repeat="tag in tags"
                              ng-click="switchTag(tag)"
@@ -92,7 +92,7 @@
                     </div>
                     <div class="more"
                          ng-click="nextPage()"
-                         ng-show="events.length"
+                         ng-show="events.length && pages.page < pages.totalPages"
                          ng-cloak>
                          {{pages.page}}/{{pages.totalPages}} Ещё <i ng-cloak ng-show=" searchStatus" class="fa fa-spinner fa-spin"></i>
                     </div>
