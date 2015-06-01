@@ -1,26 +1,4 @@
-angular.module('ontour', []).
-config(function($rootScope, $compileProvider, $httpProvider, $logProvider, $controllerProvider) {
-
-	// $logProvider.debugEnabled(true);
-
-	$controllerProvider.allowGlobals();
-
-	$compileProvider.debugInfoEnabled(false);
-
-	// $httpProvider.useApplyAsync(true);
-	
-	/*
-	$rootScope.$on('$stateChangeError', function(e, toState, toParams, fromState, fromParams) {
-		if (e typeof AuthorizationError) {
-			$state.go('login');
-		}	
-	});
-	*/
-
-}).
-run(function($templateCache) {
-
-	/*$templateCache.put('search-bar.html', '<menu id="search"
+<menu id="search"
       ng-class="{'slide-menu' : pages.page}"
       class="fade-animation">
     <section>
@@ -73,6 +51,4 @@ run(function($templateCache) {
        title="Только фестивали"
        class="festivals"> Ф </a>
 
-</menu>');*/
-
-});
+</menu>

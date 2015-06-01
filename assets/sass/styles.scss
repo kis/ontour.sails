@@ -1,4 +1,3 @@
-
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
 
 $bg: rgba(16,49,90,1);
@@ -20,35 +19,16 @@ body {
 }
 
 .fade-animation {
-	-webkit-transition: 0.2s linear all;
-	transition: 0.2s linear all;
-}
-
-.ng-enter {
-	@extend .fade-animation;
-	opacity: 0;
-}
-
-.ng-enter-active {
-	@extend .fade-animation;
-	@extend .ng-enter;
-	opacity: 1;
-}
-
-.ng-leave {
-	@extend .fade-animation;
-	opacity: 1;
-}
-
-.ng-leave-active {
-	@extend .fade-animation;
-	@extend .ng-leave;
-	opacity: 0;
-}
-
-.slide-menu {
-	@extend .fade-animation;
-	left: 345px;
+	-webkit-transition: all linear 0.2s;
+	transition: all linear 0.2s;
+	.ng-hide-add.ng-hide-add-active {
+		line-height: 20px;
+		opacity: 1;
+	}
+	.ng-hide-remove.ng-hide-remove-active {
+		line-height: 0;
+		opacity: 0;
+	}
 }
 
 /**

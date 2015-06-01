@@ -2,12 +2,16 @@ module.exports = function(grunt) {
 
 	grunt.config.set('sass', {
 		dev: {
+			options: {
+				sourcemap: 'none',
+				style: 'compressed'
+			},
 			files: [{
 				expand: true,
-				cwd: 'assets/styles/',
-				src: ['importer.sass'],
-				dest: '.tmp/public/styles/',
-				ext: '.css'
+				cwd: 'assets/sass',
+				src: ['all.scss'],
+				dest: 'assets/css',
+				ext: '.min.css'
 			}]
 		}
 	});
