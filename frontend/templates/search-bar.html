@@ -1,36 +1,35 @@
-<menu id="search"
+<div id="search"
       ng-class="{'slide-menu' : pages.page}"
       class="fade-animation">
-    <section>
-        <nav ng-repeat="tab in tabTitles"
-             ng-click="switchTab(tab)"
-             ng-class="{'active' : menu.activeTab.title === tab.title}"
-             ng-bind="tab.name"
-             ng-cloak
-             class="tab">
-        </nav>
-    </section>
+    <nav ng-repeat="tab in tabTitles"
+         ng-click="switchTab(tab)"
+         ng-class="{'active' : menu.activeTab.title === tab.title}"
+         ng-bind="tab.name"
+         ng-cloak
+         class="tab">
+    </nav>
 
     <section ng-controller="AutocompleteController">
-        <form name="menuForm">
-            <input ng-class="{'invalid' : menuForm.searchValue.$invalid}"
-                   ng-model="menu.searchValue"
-                   ng-keydown="getAutocompleteData(menu.searchValue)"
-                   ng-cloak
-                   class="search-field"
-                   name="searchValue"
-                   placeholder="Введите {{menu.activeTab.title}}">
-        </form>
-        
-        <section class="autocomplete">
-            <div ng-repeat="item in autocomplete.items"
-                 ng-click="search(item.name)"
-                 ng-mouseover="selectItem(item)"
-                 ng-class="{'hover' : autocomplete.activeItem === item}"
-                 ng-cloak>
-                 <a>{{item.name}} {{item.meta}}</a>
-            </div>
-        </section>
+      <form name="menuForm">
+          <input ng-class="{'invalid' : menuForm.searchValue.$invalid}"
+                 ng-model="menu.searchValue"
+                 ng-keydown="getAutocompleteData(menu.searchValue)"
+                 ng-cloak
+                 class="search-field"
+                 name="searchValue"
+                 placeholder="Введите {{menu.activeTab.title}}">
+      </form>
+      
+      <section class="autocomplete">
+          <div ng-repeat="item in autocomplete.items"
+               ng-click="search(item.name)"
+               ng-mouseover="selectItem(item)"
+               ng-class="{'hover' : autocomplete.activeItem === item}"
+               ng-cloak>
+               <a>{{item.name}} {{item.meta}}</a>
+          </div>
+      </section>
+    </section>
 
     <section class="tags"
              ng-if="menu.activeTab.name === 'Город'"
@@ -51,4 +50,4 @@
        title="Только фестивали"
        class="festivals"> Ф </a>
 
-</menu>
+</div>

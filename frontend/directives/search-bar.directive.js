@@ -1,14 +1,10 @@
 angular.module('ontour').directive('searchBar', [function () {
 	return {
 		restrict: 'E',
-		scope: true,
+		scope: false,
 		replace: true,
 		templateUrl: 'frontend/templates/search-bar.html',
 		link: function (scope, el, attrs) {
-
-			console.log(scope);
-			console.log(el);
-			console.log(attrs);
 
 			scope.menu = {
 				activeTab: {
@@ -54,7 +50,6 @@ angular.module('ontour').directive('searchBar', [function () {
 				scope.menu.festivalsOnly = scope.menu.festivalsOnly == 0 ? 1 : 0;
 			};
 
-			
 		}
 	};
 }]);
