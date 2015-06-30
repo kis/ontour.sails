@@ -28,9 +28,7 @@ angular.module("ontour").run(["$templateCache", function ($templateCache) {  'us
 
 
   $templateCache.put('frontend/templates/search-bar.html',
-    "<div id=\"search\"\n" +
-    "      ng-class=\"{'slide-menu' : pages.page}\"\n" +
-    "      class=\"fade-animation\">\n" +
+    "<div id=\"search\" ng-class=\"{slide: pages.page}\">\n" +
     "    <nav ng-repeat=\"tab in tabTitles\"\n" +
     "         ng-click=\"switchTab(tab)\"\n" +
     "         ng-class=\"{'active' : menu.activeTab.title === tab.title}\"\n" +
@@ -62,8 +60,7 @@ angular.module("ontour").run(["$templateCache", function ($templateCache) {  'us
     "    </section>\n" +
     "\n" +
     "    <section class=\"tags\"\n" +
-    "             ng-if=\"menu.activeTab.name === 'Город'\"\n" +
-    "             class=\"fade-animation\">\n" +
+    "             ng-class=\"{slidedown: menu.activeTab.name === 'Город'}\">\n" +
     "        <div ng-repeat=\"tag in tags\"\n" +
     "             ng-click=\"switchTag(tag)\"\n" +
     "             ng-class=\"{'active' : menu.activeTag === tag}\"\n" +
@@ -79,7 +76,6 @@ angular.module("ontour").run(["$templateCache", function ($templateCache) {  'us
     "       ng-class=\"{'active' : menu.festivalsOnly === 1}\"\n" +
     "       title=\"Только фестивали\"\n" +
     "       class=\"festivals\"> Ф </a>\n" +
-    "\n" +
     "</div>"
   );
   } ]);

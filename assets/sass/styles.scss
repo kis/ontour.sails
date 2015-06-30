@@ -18,24 +18,6 @@ body {
 	overflow: hidden;
 }
 
-.fade-animation {
-	-webkit-transition: all linear 0.2s;
-	transition: all linear 0.2s;
-	.ng-hide-add.ng-hide-add-active {
-		line-height: 20px;
-		opacity: 1;
-	}
-	.ng-hide-remove.ng-hide-remove-active {
-		line-height: 0;
-		opacity: 0;
-	}
-}
-
-.slide-menu {
-	@extend .fade-animation;
-	left: 345px;
-}
-
 /**
  * Search
  */
@@ -61,6 +43,9 @@ body {
 	padding: 0px;
 	z-index: 15;
 	clear: both;
+
+	-webkit-transition: all linear 0.2s;
+	transition: all linear 0.2s;
 
 	.tab {
 		padding: $padding;
@@ -108,6 +93,19 @@ body {
 		font: $font;
 		padding: 0px;
 		z-index: 5;
+
+		visibility: hidden;
+		opacity: 0;
+		height: 0px;
+
+		-webkit-transition: all linear 0.2s;
+		transition: all linear 0.2s;
+	}
+
+	.tags.slidedown {
+		visibility: visible;
+		opacity: 1;
+		height: 87px;
 	}
 
 	.tag {
@@ -132,6 +130,10 @@ body {
 
 		@include style();
 	}
+}
+
+#search.slide {
+	margin-left: 360px;
 }
 
 /**

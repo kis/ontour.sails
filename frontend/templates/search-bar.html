@@ -1,6 +1,4 @@
-<div id="search"
-      ng-class="{'slide-menu' : pages.page}"
-      class="fade-animation">
+<div id="search" ng-class="{slide: pages.page}">
     <nav ng-repeat="tab in tabTitles"
          ng-click="switchTab(tab)"
          ng-class="{'active' : menu.activeTab.title === tab.title}"
@@ -32,8 +30,7 @@
     </section>
 
     <section class="tags"
-             ng-if="menu.activeTab.name === 'Город'"
-             class="fade-animation">
+             ng-class="{slidedown: menu.activeTab.name === 'Город'}">
         <div ng-repeat="tag in tags"
              ng-click="switchTag(tag)"
              ng-class="{'active' : menu.activeTag === tag}"
@@ -49,5 +46,4 @@
        ng-class="{'active' : menu.festivalsOnly === 1}"
        title="Только фестивали"
        class="festivals"> Ф </a>
-
 </div>
