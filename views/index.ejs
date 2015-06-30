@@ -14,35 +14,9 @@
     </head>
 
     <body map>
-        
         <div ng-controller="SearchController">
-            
             <search-bar></search-bar>
-
-            <div id="events" event>
-                <div class="event-item"
-                     ng-repeat="event in events"
-                     ng-class="{'selected' : event.selected || event.focused}"
-                     ng-click="selectEvent(event)"
-                     ng-mouseenter="showPopup(event, 1)"
-                     ng-mouseleave="hidePopup(event)"
-                     ng-cloak>
-                     <img ng-src="{{event.image[3]['#text']}}" class="artist-pic" />
-                     <div class="artist-data">
-                        {{event.date}} <br/> 
-                        {{event.artists.headliner}} <br/><br/> 
-                        {{event.venue.name}} <br/> 
-                        {{event.venue.location.city}} {{event.venue. location.country}} <br/>
-                     </div>
-                </div>
-                <div class="more"
-                     ng-click="nextPage()"
-                     ng-show="events.length && pages.page < pages.totalPages"
-                     ng-cloak>
-                     {{pages.page}}/{{pages.totalPages}} Ещё <i ng-cloak ng-show="searchStatus" class="fa fa-spinner fa-spin"></i>
-                </div>
-            </div>
-        
+            <events></events>
         </div>
         
         <div id="map"></div>
@@ -59,6 +33,5 @@
         <script src="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js"></script>
         <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js"></script>
         <script src="js/main.js"></script>
-
     </body>
 </html>

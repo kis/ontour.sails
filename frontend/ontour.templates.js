@@ -1,5 +1,32 @@
 angular.module("ontour").run(["$templateCache", function ($templateCache) {  'use strict';
 
+  $templateCache.put('frontend/templates/events.html',
+    "<div id=\"events\">\n" +
+    "    <div class=\"event-item\"\n" +
+    "         ng-repeat=\"event in events\"\n" +
+    "         ng-class=\"{'selected' : event.selected || event.focused}\"\n" +
+    "         ng-click=\"selectEvent(event)\"\n" +
+    "         ng-mouseenter=\"showPopup(event, 1)\"\n" +
+    "         ng-mouseleave=\"hidePopup(event)\"\n" +
+    "         ng-cloak>\n" +
+    "         <img ng-src=\"{{event.image[3]['#text']}}\" class=\"artist-pic\" />\n" +
+    "         <div class=\"artist-data\">\n" +
+    "            {{event.date}} <br/> \n" +
+    "            {{event.artists.headliner}} <br/><br/> \n" +
+    "            {{event.venue.name}} <br/> \n" +
+    "            {{event.venue.location.city}} {{event.venue. location.country}} <br/>\n" +
+    "         </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"more\"\n" +
+    "         ng-click=\"nextPage()\"\n" +
+    "         ng-show=\"events.length && pages.page < pages.totalPages\"\n" +
+    "         ng-cloak>\n" +
+    "         {{pages.page}}/{{pages.totalPages}} Ещё <i ng-cloak ng-show=\"searchStatus\" class=\"fa fa-spinner fa-spin\"></i>\n" +
+    "    </div>\n" +
+    "</div>"
+  );
+
+
   $templateCache.put('frontend/templates/search-bar.html',
     "<div id=\"search\"\n" +
     "      ng-class=\"{'slide-menu' : pages.page}\"\n" +

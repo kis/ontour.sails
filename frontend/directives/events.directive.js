@@ -1,6 +1,9 @@
-angular.module('ontour').directive('event', ['$filter', function ($filter) {
+angular.module('ontour').directive('events', ['$filter', function ($filter) {
 	return {
-		restrict: 'A',
+		restrict: 'E',
+		scope: false,
+		replace: true,
+		templateUrl: 'frontend/templates/events.html',
 		link: function ($scope, $el, $attrs) {
 			$scope.$watchCollection('lastEvents', function() {
 				if ($scope.lastEvents.length) {
