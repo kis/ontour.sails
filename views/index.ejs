@@ -19,7 +19,7 @@
             
             <search-bar></search-bar>
 
-            <div id="events" ng-controller="EventController">
+            <div id="events" event>
                 <div class="event-item"
                      ng-repeat="event in events"
                      ng-class="{'selected' : event.selected || event.focused}"
@@ -50,9 +50,7 @@
         <div id="about"> Ontour {{ontourDate}} </div>
         
         <div id="page-controls">
-            <a href="/welcome">
-                <i class="fa fa-home fa-2x"></i>
-            </a>
+            <a href="/welcome"><i class="fa fa-home fa-2x"></i></a>
         </div>
 
         <script src="bower_components/angular/angular.min.js"></script>
