@@ -137,9 +137,9 @@ angular.module('ontour').directive('events', ['$filter', function ($filter) {
 					$scope.map.addLayer(event.popup);
 					event.focused = true;
 
-					if (mode) {
+					/*if (mode) {
 						$scope.map.panTo(event.marker.getLatLng());
-					}
+					}*/
 
 					if (!$scope.$$phase) {
 						$scope.$apply();
