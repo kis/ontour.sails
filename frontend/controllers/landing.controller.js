@@ -6,7 +6,14 @@ function ($scope, $http) {
 	$scope.submitRegistration = function() {
 		if (!$scope.regform.$invalid) {
 			console.log($scope.user);
-			$http.post('/register', $scope.user);
+			$http({
+				url: '/register', 
+				data: $scope.user,
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded; text/html; charset=UTF-8'
+				}
+			});
 		}
 	};
 
@@ -14,7 +21,14 @@ function ($scope, $http) {
 		if (!$scope.loginform.$invalid) {
 			$scope.user.username = $scope.user.email;
 			console.log($scope.user);
-			$http.post('/login', $scope.user);
+			$http({
+				url: '/login', 
+				data: $scope.user,
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded; text/html; charset=UTF-8'
+				}
+			});
 		}
 	};
 
