@@ -6,7 +6,6 @@ function ($scope, $http) {
 	$scope.submitRegistration = function() {
 		if (!$scope.regform.$invalid) {
 			console.log($scope.user);
-
 			$http.post('/register', $scope.user);
 		}
 	};
