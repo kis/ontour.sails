@@ -1,27 +1,52 @@
-/**
-* User.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
-*/
+// app/models/user.js
+// load the things we need
+var mongoose = require('mongoose');
+var bcrypt   = require('bcrypt-nodejs');
 
-var Waterline = require('waterline');
+// create the model for users and expose it to our app
+module.exports = function (mongoose, config) {
+    // define the schema for our user model
+    var userSchema = mongoose.Schema({
 
-var user = Waterline.Collection.extend({
-	tableName: 'users',
-	adapter: 'sails-mongo',	
-	migrate: 'safe',
-	autoCreatedAt: true,
-	autoUpdatedAt: true,
-	autoPK: true,
-	attributes: {
-	  	email        : {
-	  		type: 'String'
-	  	},
-	  	password     : {
-	  		type: 'String'
-	  	}
-  	}
-});
+        local            : {
+            email        : String,
+            password     : String,
+        },
+        facebook         : {
+            id           : String,
+            token        : String,
+            email        : String,
+            name         : String
+        },
+        twitter          : {
+            id           : String,
+            token        : String,
+            displayName  : String,
+            username     : String
+        },
+        google           : {
+            id           : String,
+            token        : String,
+            email        : String,
+            name         : String
+        }
 
-module.exports = user;
+    });
+
+    // methods ======================
+    // generating a hash
+    userSchema.methods.generateHash = function(password) {
+        return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+    };
+
+    // checking if password is valid
+    userSchema.methods.validPassword = function(password) {
+        return bcrypt.compareSync(password, this.local.password);
+    };
+
+    try {
+        mongoose.model('User', userSchema);
+    } catch (error) {}
+
+    return mongoose.model('User');
+};
