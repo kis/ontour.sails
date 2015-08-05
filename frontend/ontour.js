@@ -1,4 +1,5 @@
 angular.module('ontour', [
 	'ngAnimate',
-	'ui.router'
+	'ui.router',
+	'angular-md5'
 ]);

@@ -1,18 +1,17 @@
-angular.module('ontour').controller('LandingController', 
-function ($scope, $http) {
+angular.module('ontour').controller('LandingController', ['$scope', '$http', 'md5',
+	function ($scope, $http, md5) {
 	
 	$scope.user = {};
 
 	$scope.submitRegistration = function() {
 		if (!$scope.regform.$invalid) {
-			console.log($scope.user);
+			var userData = angular.copy($scope.user);
+			userData.password = md5.createHash(userData.password);
+			console.log(userData);
 			$http({
 				url: '/auth/local/register', 
-				data: $scope.user,
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded; text/html; charset=UTF-8'
-				}
+				data: userData,
+				method: 'POST'
 			});
 		}
 	};
@@ -24,12 +23,9 @@ function ($scope, $http) {
 			$http({
 				url: '/login', 
 				data: $scope.user,
-				method: 'GET',
-				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded; text/html; charset=UTF-8'
-				}
+				method: 'GET'
 			});
 		}
 	};
 
-});
+}]);

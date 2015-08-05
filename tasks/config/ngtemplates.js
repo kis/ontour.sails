@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 	grunt.config.set('ngtemplates', {
 		app: { 
 			src: 'frontend/templates/*.html',
-			dest: 'frontend/ontour.templates.js',
+			dest: 'frontend/ontour_templates.js',
 			options: {
 				htmlmin: '<%= htmlmin %>',
 				bootstrap: function(module, script) {
