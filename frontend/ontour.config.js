@@ -1,20 +1,9 @@
 angular.module('ontour', []).
 config(function($rootScope, $compileProvider, $httpProvider, $logProvider, $controllerProvider) {
 
-	// $logProvider.debugEnabled(true);
-
 	$controllerProvider.allowGlobals();
 
 	$compileProvider.debugInfoEnabled(false);
-
-	// delete $httpProvider.defaults.headers.common['X-Requested-With'];
-	// $httpProvider.defaults.headers.post['Accept'] = 'application/json, text/javascript';
-	$httpProvider.defaults.headers.post['Content-Type'] = "application/x-www-form-urlencoded; text/html; charset=UTF-8";
-	// $httpProvider.defaults.headers.post['Access-Control-Max-Age'] = '1728000';
-	// $httpProvider.defaults.headers.common['Access-Control-Max-Age'] = '1728000';
-	// $httpProvider.defaults.headers.common['Accept'] = 'application/json, text/javascript';
-	$httpProvider.defaults.headers.common['Content-Type'] = "application/x-www-form-urlencoded; text/html; charset=UTF-8";
-	// $httpProvider.defaults.useXDomain = true;
 
 	// $httpProvider.useApplyAsync(true);
 	
@@ -26,7 +15,38 @@ config(function($rootScope, $compileProvider, $httpProvider, $logProvider, $cont
 	});
 	*/
 
+	// Enable log
+	$logProvider.debugEnabled(true);
+
+	// set default headers
+	$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+	$httpProvider.defaults.useXDomain = true;
+	$httpProvider.defaults.transformRequest = requestTransformer;
+	delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+	function requestTransformer(data) {
+	  return angular.isObject(data) && String(data) !== '[object File]' ? transformRequest(data) : data;
+	}
+
+	function transformRequest(object, prefix) {
+	  var stack = [];
+	  var value;
+	  var key;
+	  for (key in object) {
+	    value = object[key];
+	    key = prefix ? prefix + '[' + key + ']' : key;
+	    if (value === null) {
+	      value = encodeURIComponent(key) + '=';
+	    } else if (typeof(value) !== 'object') {
+	      value = encodeURIComponent(key) + '=' + encodeURIComponent(value);
+	    } else {
+	      value = transformRequest(value, key);
+	    }
+	    stack.push(value);
+	  }
+	  return stack.join('&');
+	}
+
 }).
 run(function() {
-
 });

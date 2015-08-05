@@ -14,6 +14,13 @@
 	 novalidate
 	 autocomplete="off">
 	<input class="landing-data" 
+		  type="text"
+		  name="username" 
+		  placeholder="Username" 
+		  ng-model="user.username"
+		  ng-class="{invalid: regform.$submitted && regform.username.$invalid}"
+		  required>
+	<input class="landing-data" 
 		  type="email"
 		  name="email" 
 		  ng-pattern="/[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/i"
@@ -27,14 +34,6 @@
 		  placeholder="Пароль" 
 		  ng-model="user.password" 
 		  ng-class="{invalid: regform.$submitted && regform.password.$invalid}"
-		  required>
-	<input class="landing-data" 
-		  type="password"
-		  name="password_repeat" 
-		  placeholder="Повторите пароль" 
-		  ng-model="user.password_repeat" 
-		  password-repeat="password"
-		  ng-class="{invalid: regform.$submitted && regform.password_repeat.$invalid}"
 		  required>
 	<button class="landing-data" 
 		   type="submit">Регистрация</button>

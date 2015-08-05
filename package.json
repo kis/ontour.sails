@@ -6,6 +6,8 @@
   "keywords": [],
   "dependencies": {
     "bcrypt": "^0.8.1",
+    "bcryptjs": "latest",
+    "validator": "latest",
     "ejs": "~0.8.4",
     "grunt": "0.4.2",
     "grunt-angular-templates": "^0.5.7",
@@ -30,12 +32,16 @@
     "sails-mongo": "^0.10.5",
     "waterline": "^0.10.18",
     "passport" : "~0.1.17",         
+    "passport-http-bearer": "latest",
+    "passport-github": "latest",
+    "passport-cas": "latest",
     "passport-local" : "~0.1.6",    
     "passport-facebook" : "~1.0.2", 
     "passport-twitter" : "~1.0.2",  
     "passport-google-oauth" : "~0.1.5",
     "connect-flash" : "~0.1.1",     
-    "bcrypt-nodejs" : "latest"
+    "bcrypt-nodejs" : "latest",
+    "sails-generate-auth": "latest"
   },
   "scripts": {
     "start": "node app.js",

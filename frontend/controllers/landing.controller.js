@@ -7,7 +7,7 @@ function ($scope, $http) {
 		if (!$scope.regform.$invalid) {
 			console.log($scope.user);
 			$http({
-				url: '/register', 
+				url: '/auth/local/register', 
 				data: $scope.user,
 				method: 'POST',
 				headers: {
@@ -24,7 +24,7 @@ function ($scope, $http) {
 			$http({
 				url: '/login', 
 				data: $scope.user,
-				method: 'POST',
+				method: 'GET',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded; text/html; charset=UTF-8'
 				}

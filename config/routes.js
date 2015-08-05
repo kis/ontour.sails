@@ -52,21 +52,16 @@ module.exports.routes = {
     view: 'landing/success'
   },
 
-  /*app.post('/register', passport.authenticate('local-signup', {
-    successRedirect : '/success', // redirect to the secure profile section
-    failureRedirect : '/signup', // redirect back to the signup page if there is an error
-    failureFlash : true // allow flash messages
-  }));
+  'get /login': 'AuthController.login',
+  'get /logout': 'AuthController.logout',
+  'get /register': 'AuthController.register',
 
-  app.post('/login', passport.authenticate('local-login', {
-    successRedirect : '/', // redirect to the secure profile section
-    failureRedirect : '/signin', // redirect back to the signup page if there is an error
-    failureFlash : true // allow flash messages
-  }));*/
+  'post /auth/local': 'AuthController.callback',
+  'post /auth/local/:action': 'AuthController.callback',
 
-  'post /login': 'UserController.login',
-  'post /logout': 'UserController.logout',
-  'post /register': 'UserController.register'
+  'get /auth/:provider': 'AuthController.provider',
+  'get /auth/:provider/callback': 'AuthController.callback',
+  'get /auth/:provider/:action': 'AuthController.callback',
 
 
 
