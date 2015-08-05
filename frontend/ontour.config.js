@@ -1,6 +1,8 @@
 angular.module('ontour', []).
 config(function($rootScope, $compileProvider, $httpProvider, $logProvider, $controllerProvider) {
 
+	console.log('1');
+
 	$controllerProvider.allowGlobals();
 
 	$compileProvider.debugInfoEnabled(false);
@@ -49,4 +51,5 @@ config(function($rootScope, $compileProvider, $httpProvider, $logProvider, $cont
 
 }).
 run(function() {
+	console.log('2');
 });
