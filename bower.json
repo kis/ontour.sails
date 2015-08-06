@@ -11,7 +11,7 @@
     "ui-router": "~0.2.15",
     "angular-animate": "~1.4.0",
     "angular-md5": "~0.1.8",
-    "ngInfiniteScroll": "1.0.0",
+    "ngInfiniteScroll": "~1.2.1",
     "quick-ngrepeat": "*",
     "jquery": "~2.1.4"
   }

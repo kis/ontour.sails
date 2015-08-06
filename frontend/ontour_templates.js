@@ -2,7 +2,7 @@ angular.module("ontour").run(["$templateCache", function ($templateCache) {  'us
 
   $templateCache.put('frontend/templates/events.html',
     "<div id=\"events\" infinite-scroll=\"nextPage()\" \n" +
-    "                 infinite-scroll-distance=\"10\">\n" +
+    "                 infinite-scroll-distance=\"2\">\n" +
     "    <div class=\"event-item\"\n" +
     "         quick-ng-repeat=\"event in events\"\n" +
     "         quick-repeat-list=\"events\"\n" +
