@@ -13,7 +13,7 @@ $color-hover: rgba(126,7,21,1);
 	height: 100%;
 	background: url(../img/registration.jpg);
 	background-position: bottom left;
-	opacity: 0.8;
+	opacity: 0.9;
 	overflow: hidden;
 	zoom: 0.6;
 }
@@ -129,21 +129,25 @@ $color-hover: rgba(126,7,21,1);
 
 #social {
 	position: absolute;
-	right: 15px;
-	bottom: 15px;
+	top: 0px;
 	z-index: 25;
-	a {
+	font-size: 0;
+	li {
 		display: inline-block;
-		width: 50px;
-		height: 50px;
-		margin: 2px;
-		background: $color;
-		i {
-			padding: 10px;
-			color: white;
+		font-size: 15px;
+		a {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			margin: 0px;
+			background: $color;
+			i {
+				padding: 10px;
+				color: white;
+			}
+			&:hover {
+				background: $color-hover;
+			}
 		}
-		&:hover {
-			background: $color-hover;
-		}
-	}
+	}	
 }

@@ -111,18 +111,9 @@ $paddingLess: 6px 8px 6px 8px;
 		@include style();
 	}
 
-	.search-button {
+	.submits a {
+		width: 137px;
 		padding: $padding;
-		width: 135px;
-
-		@include style();
-	}
-
-	.festivals {
-		width: 15px;
-		padding: 12px 5px 12px 5px;
-		margin-left: 3px;
-
 		@include style();
 	}
 }
@@ -215,4 +206,24 @@ $paddingLess: 6px 8px 6px 8px;
 
 ::selection {
 	background: #ffb7b7;
+}
+
+#page-controls {
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	z-index: 25;
+	a {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		background: $bg-alpha;
+		i {
+			padding: 10px;
+			color: white;
+		}
+		&:hover {
+			background: $bg;
+		}
+	}
 }

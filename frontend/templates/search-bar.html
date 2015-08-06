@@ -40,10 +40,11 @@
         </div>
     </section>
     
-    <a class="search-button" ng-click="search(menu.searchValue)">Поиск</a>
-
-    <a ng-click="setFestivalsOnly()"
-       ng-class="{'active' : menu.festivalsOnly === 1}"
-       title="Только фестивали"
-       class="festivals"> Ф </a>
+    <section class="submits">
+      <a class="search-button" ng-click="search(menu.searchValue)">Поиск</a>
+      <a ng-click="setFestivalsOnly()"
+         ng-class="{'active' : menu.festivalsOnly === 1}"
+         title="Только фестивали"
+         class="festivals">Фестивали</a>
+    </section>
 </div>

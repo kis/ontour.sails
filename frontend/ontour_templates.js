@@ -66,12 +66,13 @@ angular.module("ontour").run(["$templateCache", function ($templateCache) {  'us
     "        </div>\n" +
     "    </section>\n" +
     "    \n" +
-    "    <a class=\"search-button\" ng-click=\"search(menu.searchValue)\">Поиск</a>\n" +
-    "\n" +
-    "    <a ng-click=\"setFestivalsOnly()\"\n" +
-    "       ng-class=\"{'active' : menu.festivalsOnly === 1}\"\n" +
-    "       title=\"Только фестивали\"\n" +
-    "       class=\"festivals\"> Ф </a>\n" +
+    "    <section class=\"submits\">\n" +
+    "      <a class=\"search-button\" ng-click=\"search(menu.searchValue)\">Поиск</a>\n" +
+    "      <a ng-click=\"setFestivalsOnly()\"\n" +
+    "         ng-class=\"{'active' : menu.festivalsOnly === 1}\"\n" +
+    "         title=\"Только фестивали\"\n" +
+    "         class=\"festivals\">Фестивали</a>\n" +
+    "    </section>\n" +
     "</div>"
   );
   } ]);
