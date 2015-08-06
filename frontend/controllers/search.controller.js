@@ -21,6 +21,8 @@ angular.module('ontour').controller('SearchController', function($scope, SearchS
 	};
 
 	$scope.nextPage = function() {
+		console.log($scope.pages.page, $scope.pages.totalPages, $scope.menu.searchValue);
+
 		if ($scope.pages.page < $scope.pages.totalPages && $scope.menu.searchValue) {
 			$scope.pages.page++;
 
@@ -47,6 +49,10 @@ angular.module('ontour').controller('SearchController', function($scope, SearchS
 			});
 		}
 	};
+
+	$scope.$on('events:loaded', function() {
+		console.log('aas');
+	});;
 
 	$scope.getEvents = function(data) {
 		$scope.pages.totalPages = data.events["@attr"].totalPages;

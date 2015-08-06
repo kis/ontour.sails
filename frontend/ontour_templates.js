@@ -1,9 +1,12 @@
 angular.module("ontour").run(["$templateCache", function ($templateCache) {  'use strict';
 
   $templateCache.put('frontend/templates/events.html',
-    "<div id=\"events\">\n" +
+    "<div id=\"events\" infinite-scroll=\"nextPage()\" \n" +
+    "                 infinite-scroll-distance=\"2\" \n" +
+    "                 infinite-scroll-listen-for-event=\"events:loaded\">\n" +
     "    <div class=\"event-item\"\n" +
-    "         ng-repeat=\"event in events\"\n" +
+    "         quick-ng-repeat=\"event in events\"\n" +
+    "         quick-repeat-list=\"events\"\n" +
     "         ng-class=\"{'selected' : event.selected || event.focused}\"\n" +
     "         ng-click=\"selectEvent(event)\"\n" +
     "         ng-mouseenter=\"showPopup(event, 1)\"\n" +
@@ -17,12 +20,12 @@ angular.module("ontour").run(["$templateCache", function ($templateCache) {  'us
     "            {{event.venue.location.city}} {{event.venue. location.country}} <br/>\n" +
     "         </div>\n" +
     "    </div>\n" +
-    "    <div class=\"more\"\n" +
+    "    <!-- <div class=\"more\"\n" +
     "         ng-click=\"nextPage()\"\n" +
     "         ng-show=\"events.length && pages.page < pages.totalPages\"\n" +
     "         ng-cloak>\n" +
     "         {{pages.page}}/{{pages.totalPages}} Ещё <i ng-cloak ng-show=\"searchStatus\" class=\"fa fa-spinner fa-spin\"></i>\n" +
-    "    </div>\n" +
+    "    </div> -->\n" +
     "</div>"
   );
 

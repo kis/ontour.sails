@@ -5,6 +5,11 @@ angular.module('ontour').directive('events', ['$filter', function ($filter) {
 		replace: true,
 		templateUrl: 'frontend/templates/events.html',
 		link: function ($scope, $el, $attrs) {
+			$('#events').on('scroll', function() {
+				console.log('111');
+				$scope.$emit('events:loaded');
+			});
+
 			$scope.$watchCollection('lastEvents', function() {
 				if ($scope.lastEvents.length) {
 					angular.forEach($scope.lastEvents, function(event, index, events) {
