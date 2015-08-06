@@ -2,6 +2,7 @@
 
 $font: bold 36px Roboto Condensed;
 $font-small: bold 24px Roboto Condensed;
+$color-social: rgba(126,7,21,0.4);
 $color: rgba(126,7,21,0.8);
 $color-hover: rgba(126,7,21,1);
 
@@ -140,7 +141,7 @@ $color-hover: rgba(126,7,21,1);
 			width: 50px;
 			height: 50px;
 			margin: 0px;
-			background: $color;
+			background: $color-social;
 			i {
 				padding: 10px;
 				color: white;
