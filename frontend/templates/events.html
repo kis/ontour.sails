@@ -1,6 +1,5 @@
 <div id="events" infinite-scroll="nextPage()" 
-                 infinite-scroll-distance="2" 
-                 infinite-scroll-listen-for-event="events:loaded">
+                 infinite-scroll-distance="10">
     <div class="event-item"
          quick-ng-repeat="event in events"
          quick-repeat-list="events"
@@ -17,10 +16,4 @@
             {{event.venue.location.city}} {{event.venue. location.country}} <br/>
          </div>
     </div>
-    <!-- <div class="more"
-         ng-click="nextPage()"
-         ng-show="events.length && pages.page < pages.totalPages"
-         ng-cloak>
-         {{pages.page}}/{{pages.totalPages}} Ещё <i ng-cloak ng-show="searchStatus" class="fa fa-spinner fa-spin"></i>
-    </div> -->
 </div>

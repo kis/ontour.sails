@@ -2,8 +2,7 @@ angular.module("ontour").run(["$templateCache", function ($templateCache) {  'us
 
   $templateCache.put('frontend/templates/events.html',
     "<div id=\"events\" infinite-scroll=\"nextPage()\" \n" +
-    "                 infinite-scroll-distance=\"2\" \n" +
-    "                 infinite-scroll-listen-for-event=\"events:loaded\">\n" +
+    "                 infinite-scroll-distance=\"10\">\n" +
     "    <div class=\"event-item\"\n" +
     "         quick-ng-repeat=\"event in events\"\n" +
     "         quick-repeat-list=\"events\"\n" +
@@ -20,12 +19,6 @@ angular.module("ontour").run(["$templateCache", function ($templateCache) {  'us
     "            {{event.venue.location.city}} {{event.venue. location.country}} <br/>\n" +
     "         </div>\n" +
     "    </div>\n" +
-    "    <!-- <div class=\"more\"\n" +
-    "         ng-click=\"nextPage()\"\n" +
-    "         ng-show=\"events.length && pages.page < pages.totalPages\"\n" +
-    "         ng-cloak>\n" +
-    "         {{pages.page}}/{{pages.totalPages}} Ещё <i ng-cloak ng-show=\"searchStatus\" class=\"fa fa-spinner fa-spin\"></i>\n" +
-    "    </div> -->\n" +
     "</div>"
   );
 

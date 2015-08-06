@@ -1,7 +1,5 @@
 angular.module('ontour').controller('SearchController', function($scope, SearchService) {
 
-	$scope.searchStatus = false;
-
 	$scope.events = [];
 
 	$scope.lastEvents = [];
@@ -26,8 +24,6 @@ angular.module('ontour').controller('SearchController', function($scope, SearchS
 		if ($scope.pages.page < $scope.pages.totalPages && $scope.menu.searchValue) {
 			$scope.pages.page++;
 
-			$scope.searchStatus = true;
-
 			SearchService.search({
 				param         : $scope.menu.activeTab.param, 
 				location      : $scope.menu.searchValue, 
@@ -37,8 +33,6 @@ angular.module('ontour').controller('SearchController', function($scope, SearchS
 				page 		  : $scope.pages.page
 			})
 			.success(function(response) {
-				$scope.searchStatus = false;
-				
 				if (response.error == 8 || 
 					typeof response.events == 'undefined' || 
 					response.events.total == 0) {
@@ -49,10 +43,6 @@ angular.module('ontour').controller('SearchController', function($scope, SearchS
 			});
 		}
 	};
-
-	$scope.$on('events:loaded', function() {
-		console.log('aas');
-	});;
 
 	$scope.getEvents = function(data) {
 		$scope.pages.totalPages = data.events["@attr"].totalPages;

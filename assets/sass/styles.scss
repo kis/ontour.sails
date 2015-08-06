@@ -151,18 +151,6 @@ body {
 	font: $font;
 	color: white;
 	z-index: 6;
-
-	.more {
-		position: relative;
-		height: 25px;
-		padding: 18px 14px 12px 14px;
-		background-color: $bg-alpha;
-		text-align: center;
-		&:hover {
-			background: $bg;
-			cursor: pointer;
-		}
-	}
 }
 
 .event-item {

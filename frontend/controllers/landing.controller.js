@@ -7,7 +7,6 @@ angular.module('ontour').controller('LandingController', ['$scope', '$http', 'md
 		if (!$scope.regform.$invalid) {
 			var userData = angular.copy($scope.user);
 			userData.password = md5.createHash(userData.password);
-			console.log(userData);
 			$http({
 				url: '/auth/local/register', 
 				data: userData,
@@ -18,11 +17,11 @@ angular.module('ontour').controller('LandingController', ['$scope', '$http', 'md
 
 	$scope.submitLogin = function() {
 		if (!$scope.loginform.$invalid) {
-			$scope.user.username = $scope.user.email;
-			console.log($scope.user);
+			var userData = angular.copy($scope.user);
+			userData.password = md5.createHash(userData.password);
 			$http({
 				url: '/login', 
-				data: $scope.user,
+				data: userData,
 				method: 'GET'
 			});
 		}

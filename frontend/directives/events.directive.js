@@ -5,11 +5,6 @@ angular.module('ontour').directive('events', ['$filter', function ($filter) {
 		replace: true,
 		templateUrl: 'frontend/templates/events.html',
 		link: function ($scope, $el, $attrs) {
-			$('#events').on('scroll', function() {
-				console.log('111');
-				$scope.$emit('events:loaded');
-			});
-
 			$scope.$watchCollection('lastEvents', function() {
 				if ($scope.lastEvents.length) {
 					angular.forEach($scope.lastEvents, function(event, index, events) {
@@ -141,10 +136,6 @@ angular.module('ontour').directive('events', ['$filter', function ($filter) {
 				if (event.popup != null && event.selected == false) {
 					$scope.map.addLayer(event.popup);
 					event.focused = true;
-
-					/*if (mode) {
-						$scope.map.panTo(event.marker.getLatLng());
-					}*/
 
 					if (!$scope.$$phase) {
 						$scope.$apply();
