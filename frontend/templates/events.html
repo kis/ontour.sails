@@ -1,8 +1,7 @@
 <div id="events" infinite-scroll="nextPage()" 
                  infinite-scroll-distance="2">
     <div class="event-item"
-         quick-ng-repeat="event in events"
-         quick-repeat-list="events"
+         ng-repeat="event in events track by $index"
          ng-class="{'selected' : event.selected || event.focused}"
          ng-click="selectEvent(event)"
          ng-mouseenter="showPopup(event, 1)"

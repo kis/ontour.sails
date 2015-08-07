@@ -4,8 +4,7 @@ angular.module("ontour").run(["$templateCache", function ($templateCache) {  'us
     "<div id=\"events\" infinite-scroll=\"nextPage()\" \n" +
     "                 infinite-scroll-distance=\"2\">\n" +
     "    <div class=\"event-item\"\n" +
-    "         quick-ng-repeat=\"event in events\"\n" +
-    "         quick-repeat-list=\"events\"\n" +
+    "         ng-repeat=\"event in events track by $index\"\n" +
     "         ng-class=\"{'selected' : event.selected || event.focused}\"\n" +
     "         ng-click=\"selectEvent(event)\"\n" +
     "         ng-mouseenter=\"showPopup(event, 1)\"\n" +
