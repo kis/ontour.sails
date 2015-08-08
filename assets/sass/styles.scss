@@ -1,8 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
 
-$bg: rgba(16,49,90,1);
-$bg-alpha: rgba(16,49,90,0.4);
-$bg-grey: rgba(223,223,223,0.5);
+$bg: #73B6E6;
+$bg-alpha: #c5bcab;
+$bg-grey: rgba(223,223,223,1);
 
 $font: 14px Roboto Condensed;
 $fontHeader: 18px Roboto Condensed;
@@ -18,7 +18,7 @@ $paddingLess: 6px 8px 6px 8px;
  * Search
  */
 
-@mixin style() {
+@mixin style($bg-alpha) {
 	font: $font;
 	display: inline-block;
 	background: $bg-alpha;
@@ -26,7 +26,7 @@ $paddingLess: 6px 8px 6px 8px;
 	cursor: pointer;
 	text-align: center;
 	&:hover {
-		background: $bg !important;
+		background: #9CC1DC !important;
 	}
 }
 
@@ -39,6 +39,11 @@ $paddingLess: 6px 8px 6px 8px;
 	z-index: 15;
 	clear: both;
 
+	-webkit-user-select: none;
+	-moz-user-select: none;   
+	-ms-user-select: none;    
+	user-select: none;        
+
 	-webkit-transition: all linear 0.2s;
 	transition: all linear 0.2s;
 
@@ -46,7 +51,7 @@ $paddingLess: 6px 8px 6px 8px;
 		padding: $padding;
 		width: 137px;
 
-		@include style();
+		@include style(#c5bcab);
 	}
 
 	.active {
@@ -106,15 +111,15 @@ $paddingLess: 6px 8px 6px 8px;
 	.tag {
 		padding: $paddingLess;
 		width: 94px;
-		border-bottom: 1px solid $bg-alpha;
+		border-bottom: 1px solid #E4E2DF;
 
-		@include style();
+		@include style(#D2CAB9);
 	}
 
 	.submits a {
 		width: 137px;
 		padding: $padding;
-		@include style();
+		@include style(#BBB7AE);
 	}
 }
 
@@ -136,6 +141,11 @@ $paddingLess: 6px 8px 6px 8px;
 	font: $font;
 	color: white;
 	z-index: 6;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;   
+	-ms-user-select: none;    
+	user-select: none;  
 }
 
 .event-item {
