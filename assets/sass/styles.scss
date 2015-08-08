@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
 
-$bg: #73B6E6;
-$bg-alpha: #c5bcab;
+$bg: #012552;
+$bg-alpha: #37425D;
 $bg-grey: rgba(223,223,223,1);
 
 $font: 14px Roboto Condensed;
@@ -9,6 +9,8 @@ $fontHeader: 18px Roboto Condensed;
 
 $padding: 12px 14px 12px 14px;
 $paddingLess: 6px 8px 6px 8px;
+
+$eventsWidth: 290px;
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
 	display: none !important;
@@ -26,7 +28,7 @@ $paddingLess: 6px 8px 6px 8px;
 	cursor: pointer;
 	text-align: center;
 	&:hover {
-		background: #9CC1DC !important;
+		background: $bg !important;
 	}
 }
 
@@ -51,7 +53,7 @@ $paddingLess: 6px 8px 6px 8px;
 		padding: $padding;
 		width: 137px;
 
-		@include style(#c5bcab);
+		@include style($bg-alpha);
 	}
 
 	.active {
@@ -65,6 +67,7 @@ $paddingLess: 6px 8px 6px 8px;
 		padding: 11px 11px 11px 12px;
 		outline: none;
 		border: 0px;
+		color: #0C1E4A;
 	}
 
 	.invalid {
@@ -80,7 +83,10 @@ $paddingLess: 6px 8px 6px 8px;
 		background: white;
 		div {
 			padding: $paddingLess;
-			border-bottom: 1px solid $bg-alpha;
+			border-bottom: 1px solid #E0E3EA;
+			a {
+				color: #0C1E4A;
+			}
 			&:hover {
 				background: $bg-grey;
 			}
@@ -111,20 +117,20 @@ $paddingLess: 6px 8px 6px 8px;
 	.tag {
 		padding: $paddingLess;
 		width: 94px;
-		border-bottom: 1px solid #E4E2DF;
+		border-bottom: 1px solid #7D8288;
 
-		@include style(#D2CAB9);
+		@include style(#53637B);
 	}
 
 	.submits a {
 		width: 137px;
 		padding: $padding;
-		@include style(#BBB7AE);
+		@include style($bg-alpha);
 	}
 }
 
 #search.slide {
-	margin-left: 330px;
+	margin-left: $eventsWidth;
 }
 
 /**
@@ -135,7 +141,7 @@ $paddingLess: 6px 8px 6px 8px;
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 330px;
+	width: $eventsWidth;
 	overflow-y: hidden;
 	overflow-x: hidden;
 	font: $font;
@@ -151,7 +157,6 @@ $paddingLess: 6px 8px 6px 8px;
 .event-item {
 	position: relative;
 	height: 100px;
-	border-bottom: 1px solid $bg-alpha;
 	background-color: $bg-alpha;
 	&:hover {
 		background: $bg;
@@ -172,7 +177,7 @@ $paddingLess: 6px 8px 6px 8px;
 	}
 
 	&.selected {
-		background: #95B2C7 !important;
+		background: $bg !important;
 	}
 
 	-webkit-user-select: none;

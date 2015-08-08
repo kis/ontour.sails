@@ -40,6 +40,7 @@ angular.module("ontour").run(["$templateCache", function ($templateCache) {  'us
     "                 ng-cloak\n" +
     "                 class=\"search-field\"\n" +
     "                 name=\"searchValue\"\n" +
+    "                 id=\"searchGoal\"\n" +
     "                 placeholder=\"Введите {{menu.activeTab.title}}\">\n" +
     "      </form>\n" +
     "      \n" +

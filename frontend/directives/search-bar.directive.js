@@ -6,6 +6,12 @@ angular.module('ontour').directive('searchBar', [function () {
 		templateUrl: 'frontend/templates/search-bar.html',
 		link: function (scope, el, attrs) {
 
+			$('#searchGoal').on('keypress', function(e) {
+				if (e.keyCode == 13) {
+					scope.$broadcast('searchInitiated', e.delegateTarget.value)
+				}
+			});
+
 			scope.menu = {
 				activeTab: {
 					title: 'название группы / артиста',

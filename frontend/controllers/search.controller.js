@@ -12,6 +12,10 @@ angular.module('ontour').controller('SearchController', function($scope, SearchS
 
 	$scope.pages_orig = angular.copy($scope.pages);
 
+	$scope.$on('searchInitiated', function(data) {
+		$scope.search(data);
+	})
+
 	$scope.search = function(item) {
 		$scope.reset();
 		// $scope.menu.searchValue = item;
