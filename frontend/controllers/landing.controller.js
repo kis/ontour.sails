@@ -8,7 +8,7 @@ angular.module('ontour').controller('LandingController', ['$scope', '$http', 'md
 			var userData = angular.copy($scope.user);
 			userData.password = md5.createHash(userData.password);
 			$http({
-				url: '/auth/local/register', 
+				url: '/aut h/local/register', 
 				data: userData,
 				method: 'POST'
 			});
