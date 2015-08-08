@@ -11,7 +11,7 @@
       <form name="menuForm">
           <input ng-class="{'invalid' : menuForm.searchValue.$invalid}"
                  ng-model="menu.searchValue"
-                 ng-keydown="getAutocompleteData(menu.searchValue)"
+                 ng-model-options="{ debounce: 500 }"
                  ng-cloak
                  class="search-field"
                  name="searchValue"

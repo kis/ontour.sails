@@ -36,7 +36,7 @@ angular.module("ontour").run(["$templateCache", function ($templateCache) {  'us
     "      <form name=\"menuForm\">\n" +
     "          <input ng-class=\"{'invalid' : menuForm.searchValue.$invalid}\"\n" +
     "                 ng-model=\"menu.searchValue\"\n" +
-    "                 ng-keydown=\"getAutocompleteData(menu.searchValue)\"\n" +
+    "                 ng-model-options=\"{ debounce: 500 }\"\n" +
     "                 ng-cloak\n" +
     "                 class=\"search-field\"\n" +
     "                 name=\"searchValue\"\n" +

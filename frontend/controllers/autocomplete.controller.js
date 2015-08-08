@@ -9,6 +9,12 @@ function($scope, AutocompleteService) {
 		$scope.autocomplete.activeItem = item;
 	};
 
+	$scope.$watch('menu.searchValue', function(newVal, oldVal) {
+		if (newVal !== oldVal) {
+			$scope.getAutocompleteData(newVal);
+		}
+	});
+
 	$scope.getAutocompleteData = function(searchValue) {
 		$scope.autocomplete.items = [];
 
