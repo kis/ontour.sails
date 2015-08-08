@@ -14,7 +14,7 @@ angular.module('ontour').controller('SearchController', function($scope, SearchS
 
 	$scope.search = function(item) {
 		$scope.reset();
-		$scope.menu.searchValue = item;
+		// $scope.menu.searchValue = item;
 		$scope.nextPage();
 	};
 

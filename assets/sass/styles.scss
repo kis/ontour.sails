@@ -171,9 +171,14 @@ $paddingLess: 6px 8px 6px 8px;
 		width: 180px;
 	}
 
-	.selected {
-		background: $bg !important;
+	&.selected {
+		background: #95B2C7 !important;
 	}
+
+	-webkit-user-select: none;
+	-moz-user-select: none;   
+	-ms-user-select: none;    
+	user-select: none;
 }
 
 /**
