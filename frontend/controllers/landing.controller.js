@@ -6,9 +6,9 @@ angular.module('ontour').controller('LandingController', ['$scope', '$http', 'md
 	$scope.submitRegistration = function() {
 		if (!$scope.regform.$invalid) {
 			var userData = angular.copy($scope.user);
-			userData.password = md5.createHash(userData.password);
+			// userData.password = md5.createHash(userData.password);
 			$http({
-				url: '/aut h/local/register', 
+				url: '/auth/local/register', 
 				data: userData,
 				method: 'POST'
 			});
